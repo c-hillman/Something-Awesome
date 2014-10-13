@@ -18,6 +18,6 @@ There are a few reasons why your input may be causing an error in calculation.
   * note that the number of applications is truncated to a integer
 
 4. There are a few limitations to Newton's Method of Approximation that could cause errors:
-  * there must actually be a real root
+  * there must actually be a real root (obviously)
   * there must not be a stationary point between the approximation and the actual root
   * there approximation given cannot be a stationary point
