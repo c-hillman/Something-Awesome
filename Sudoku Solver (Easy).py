@@ -75,10 +75,17 @@ class Cell:
 
 s = Sudoku("sudoku.txt")
 
-while "None" in s.values: #Cell.__str__ cannot return a non-string, hence "None"
-  for row in s.rows:
-    for cell in row:
-      cell.refreshPoss()
-  s.refreshValues()
+try:
+  while "None" in s.values: #Cell.__str__ cannot return a non-string, hence "None"
+    for row in s.rows:
+      for cell in row:
+        cell.refreshPoss()
+    previousValues = s.values
+    s.refreshValues()
+    if previousValues == s.values:
+      raise RuntimeError
 
-print(s)
+  print(s)
+except RuntimeError:
+  print("""An infinite loop was formed and the program was terminated.
+Check the README for more information.""")
