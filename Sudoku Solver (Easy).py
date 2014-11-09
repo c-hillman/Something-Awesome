@@ -38,18 +38,18 @@ class Cell:
     self.y = y
     #x, y coordinates where top left is (0, 0) and bottom right is (8, 8)
     
-    if   y in range(0, 2 +1):
-      if   x in range(0, 2 +1): self.box = "A"
-      elif x in range(3, 5 +1): self.box = "B"
-      elif x in range(6, 8 +1): self.box = "C"
-    elif y in range(3, 5 +1):
-      if   x in range(0, 2 +1): self.box = "D"  # A B C
-      elif x in range(3, 5 +1): self.box = "E"  # D E F
-      elif x in range(6, 8 +1): self.box = "F"  # G H I
-    elif y in range(6, 8 +1):
-      if   x in range(0, 2 +1): self.box = "G"
-      elif x in range(3, 5 +1): self.box = "H"
-      elif x in range(6, 8 +1): self.box = "I"
+    if   y in [0, 1, 2]:
+      if   x in [0, 1, 2]: self.box = "A"
+      elif x in [3, 4, 5]: self.box = "B"
+      elif x in [6, 7, 8]: self.box = "C"
+    elif y in [3, 4, 5]:
+      if   x in [0, 1, 2]: self.box = "D"  # A B C
+      elif x in [3, 4, 5]: self.box = "E"  # D E F
+      elif x in [6, 7, 8]: self.box = "F"  # G H I
+    elif y in [6, 7, 8]:
+      if   x in [0, 1, 2]: self.box = "G"
+      elif x in [3, 4, 5]: self.box = "H"
+      elif x in [6, 7, 8]: self.box = "I"
 
     if value: self.p = [False]*9
     else: self.p = [True]*9
