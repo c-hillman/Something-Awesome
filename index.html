@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+	<title>Trading Post Lookup</title>
+</head>
+<body><p>
+	<form action="http://localhost:7191">
+		Item ID:<br>
+		<input type="text" name="itemid">
+		<br><br>
+		<input type="submit" value="Go!">
+		<br>
+		<br> 
+		<i>
+			Item IDs are calculated by reversing the last four hexadecimal bytes of<br>
+			a decoded item chat links. Chat links can be found on an item's GW2 wiki page.<br>
+			ie. https://wiki.guildwars2.com/wiki/&lt;item name&gt;<br>
+			Chat links are encoded in base64, can can be decoded with various online tools.<br><br>
+			For example, Twilight has the chat link [&amp;AgHwdwAA]. Stripping the brackets<br>
+			and the ampersand, you have AgHwdwAA. Decoding this yields 0x 02 01 F0 77 00 00.<br>
+			Taking the last four bytes and reversing them gets 00 00 77 F0. Converting this<br>
+			back to decimal yields its itemID, 30704.
+		<i>
+	</form>
+</p></body>
+</html>
